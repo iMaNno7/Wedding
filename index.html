@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Invitation - mohadeseh & iman</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <div class="guest-info" id="guestInfo"></div>
+    
+    <div class="hero-image">
+        <img src="assets/images/hero.jpg" alt="Wedding Hero Image" class="full-width-image">
+    </div>
+
+    <header class="couple-header">
+        <p>iman</p>
+        <span>and</span>
+        <p>mohadeseh</p>
+    </header>
+
+    <div class="invitation-card">
+        <div class="divider">✦</div>
+        <h2 class="wedding-header">Wedding Invitation</h2>
+        
+        <div class="countdown-timer" id="countdown">
+            <div class="countdown-item">
+                <span class="number" id="days">00</span>
+                <span class="label">روز</span>
+            </div>
+            <div class="countdown-item">
+                <span class="number" id="hours">00</span>
+                <span class="label">ساعت</span>
+            </div>
+            <div class="countdown-item">
+                <span class="number" id="minutes">00</span>
+                <span class="label">دقیقه</span>
+            </div>
+            <div class="countdown-item">
+                <span class="number" id="seconds">00</span>
+                <span class="label">ثانیه</span>
+            </div>
+        </div>
+
+        <div class="invitation-text">
+            <p>با افتخار دعوت می‌کنیم تا در زیباترین روز زندگی‌مان کنارمان باشید.</p>
+            <p>حضور گرمتان، شادی‌مان را کامل‌تر می‌کند.</p>
+        </div>
+
+        <div class="date-location">
+            <p class="persian-date">۲۲ خرداد ۱۴۰۴</p>
+            <div class="divider">
+                <img src="assets/images/Time.ico" alt="Icon">
+            </div>
+            <p class="time">ساعت ۶ عصر الی ۱۲ شب</p>
+            <div class="divider">
+                <img src="assets/images/Location.ico" alt="Icon">
+            </div>
+            <p class="venue">شاندیز، مدرس ۱، نیهاد</p>
+        </div>
+
+
+
+        <div class="location">
+            <div class="map-buttons">
+                <a href="https://www.google.com/maps?q=36.364045,59.427985" target="_blank" class="map-button">Google Maps</a>
+                <a href="https://nshn.ir/c1_b1pTdpJAUK3" target="_blank" class="map-button">نشان</a>
+                <a href="https://balad.ir/p/7mfmCFpRMXqrN7" target="_blank" class="map-button">بلد</a>
+                <a href="https://www.waze.com/en/live-map/directions?latlng=36.36483529860069%2C59.42792415618897" target="_blank" class="map-button">waze</a>
+            </div>
+        </div>
+
+        <div class="map-container">
+            <iframe
+                width="100%"
+                height="300"
+                frameborder="0"
+                style="border:0"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3216.7988454544146!2d59.427985!3d36.364045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzbCsDIxJzUwLjYiTiA1OcKwMjUnNDAuNyJF!5e0!3m2!1sen!2s!4v1620000000000!5m2!1sen!2s"
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <form id="rsvpForm" class="rsvp-form">
+            <h3>آیا افتخار حضور شما را خواهیم داشت؟</h3>
+            
+            <div class="radio-group">
+                <label>
+                    <input type="radio" name="attendance" value="true" required>
+                    بله
+                </label>
+                <label>
+                    <input type="radio" name="attendance" value="false" required>
+                    خیر
+                </label>
+            </div>
+
+            <textarea name="message" placeholder="پیامی برای عروس و داماد بنویسید (اختیاری)"></textarea>
+            
+            <input type="hidden" name="firstName" id="firstName">
+            <input type="hidden" name="lastName" id="lastName">
+            <input type="hidden" name="date" id="currentDate">
+            
+            <button type="submit" class="submit-button">ارسال پاسخ</button>
+        </form>
+
+        <div class="image-gallery">
+            <div class="gallery-item">
+                <img src="assets/images/couple-1.jpg" alt="Couple Photo 1" class="gallery-image">
+            </div>
+        </div>
+
+    </div>
+    
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
