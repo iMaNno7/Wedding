@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'Dana-Medium';
+    src: url('../fonts/Dana-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
 :root {
     --primary-color: #333333;
     --text-color: #333333;
@@ -5,9 +12,9 @@
     --card-background: #FFFFFF;
     --accent-color: #666666;
     --spacing-unit: 2rem;
-    --persian-font: 'Noto Naskh Arabic', serif;
-    --english-font: 'Cormorant Garamond', serif;
-    --heading-font: 'Playfair Display', serif;
+    --persian-font: 'Dana-Medium';
+    --english-font: 'Dana-Medium';
+    --heading-font: 'Dana-Medium';
 }
 
 * {
@@ -65,7 +72,7 @@ body {
 
 .date-location {
     margin: calc(var(--spacing-unit) * 2) 0;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Dana-Medium';
     color: var(--accent-color);
 }
 
@@ -152,7 +159,7 @@ body {
     justify-content: center;
     gap: calc(var(--spacing-unit) * 1.5);
     margin: calc(var(--spacing-unit) * 2) 0;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Dana-Medium';
 }
 
 .countdown-item {
@@ -189,7 +196,7 @@ body {
 }
 
 .wedding-header {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Dana-Medium';
     text-transform: uppercase;
     letter-spacing: 0.2em;
     font-size: 0.8rem;
@@ -227,7 +234,7 @@ body {
 }
 
 .names h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Dana-Medium';
     font-size: 2.5rem;
     color: var(--text-color);
     font-weight: 400;
@@ -264,7 +271,7 @@ body {
 }
 
 .map-button {
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Dana-Medium';
     font-size: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 0.1em;
@@ -363,7 +370,7 @@ body {
 }
 
 .rsvp-form h3 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Dana-Medium';
     font-size: 1rem;
     font-weight: 400;
     letter-spacing: 0.1em;
@@ -386,7 +393,7 @@ body {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Dana-Medium';
     font-size: 0.9rem;
     color: var(--accent-color);
     cursor: pointer;
@@ -422,7 +429,7 @@ textarea {
     border: 1px solid var(--accent-color);
     border-radius: 0;
     min-height: 120px;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Dana-Medium';
     font-size: 0.9rem;
     color: var(--text-color);
     resize: vertical;
@@ -435,7 +442,7 @@ textarea:focus {
 }
 
 .submit-button {
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Dana-Medium';
     font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 0.2em;
