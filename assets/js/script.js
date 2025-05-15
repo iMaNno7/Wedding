@@ -18,7 +18,7 @@ function updateGuestInfo() {
         
         let displayText = name.replace('-', ' ');
         if (details) {
-            displayText += ` (${details})`;
+            displayText += ` ${details}`;
         }
         guestInfo.textContent = displayText;
     } else {
