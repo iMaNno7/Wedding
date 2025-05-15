@@ -51,6 +51,38 @@
     box-sizing: border-box;
 }
 
+.toast {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    padding: 16px 24px;
+    border-radius: var(--radius-md);
+    background-color: var(--color-surface);
+    color: var(--color-primary);
+    box-shadow: var(--shadow-lg);
+    font-size: var(--font-size-base);
+    z-index: 1000;
+    opacity: 0;
+    transform: translateY(16px);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.toast.success {
+    border-right: 4px solid #4CAF50;
+}
+
+.toast.error {
+    border-right: 4px solid #F44336;
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 .loading-spinner {
     display: inline-block;
     width: 20px;

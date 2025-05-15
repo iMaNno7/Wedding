@@ -55,6 +55,31 @@ function updateCountdown() {
 }
 
 // Handle form submission
+function showToast(message, type = 'success') {
+    // Remove existing toast if any
+    const existingToast = document.querySelector('.toast');
+    if (existingToast) {
+        existingToast.remove();
+    }
+
+    // Create new toast
+    const toast = document.createElement('div');
+    toast.className = `toast ${type}`;
+    toast.textContent = message;
+
+    // Add to document
+    document.body.appendChild(toast);
+
+    // Trigger animation
+    setTimeout(() => toast.classList.add('show'), 10);
+
+    // Auto remove after 3 seconds
+    setTimeout(() => {
+        toast.classList.remove('show');
+        setTimeout(() => toast.remove(), 300);
+    }, 3000);
+}
+
 function setupForm() {
     const form = document.getElementById('rsvpForm');
     const submitButton = form.querySelector('.submit-button');
@@ -81,14 +106,14 @@ function setupForm() {
             const result = await response.json();
             
             if (result.success) {
-                alert('پاسخ شما با موفقیت ثبت شد.');
+                showToast('پاسخ شما با موفقیت ثبت شد.', 'success');
                 form.reset();
             } else {
-                alert('خطا در ثبت پاسخ. لطفا دوباره تلاش کنید.');
+                showToast('خطا در ثبت پاسخ. لطفا دوباره تلاش کنید.', 'error');
             }
         } catch (error) {
             console.error('Error:', error);
-            alert('خطا در ارسال فرم. لطفا دوباره تلاش کنید.');
+            showToast('خطا در ارسال فرم. لطفا دوباره تلاش کنید.', 'error');
         } finally {
             // Hide loading state
             submitButton.disabled = false;
