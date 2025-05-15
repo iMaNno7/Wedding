@@ -23,7 +23,7 @@
     <div class="invitation-card">
         <div class="divider">✦</div>
         <h2 class="wedding-header">Wedding Invitation</h2>
-        
+
         <div class="countdown-timer" id="countdown">
             <div class="countdown-item">
                 <span class="number" id="days">00</span>
@@ -48,6 +48,10 @@
             <p>حضور گرمتان، شادی‌مان را کامل‌تر می‌کند.</p>
         </div>
 
+        <div class="invitation-text">
+            <img src="assets/video/ring(1).gif" alt="GIF description" />
+        </div>
+
         <div class="date-location">
             <p class="persian-date">۲۲ خرداد ۱۴۰۴</p>
             <div class="divider">
@@ -57,7 +61,7 @@
             <div class="divider">
                 <img src="assets/images/Location.ico" alt="Icon">
             </div>
-            <p class="venue">شاندیز، مدرس ۱، نیهاد</p>
+            <p class="venue">مشهد، شاندیز، مدرس ۱،باغ نیهاد</p>
         </div>
 
 
@@ -72,19 +76,18 @@
         </div>
 
         <div class="map-container">
-            <iframe
-                width="100%"
-                height="300"
-                frameborder="0"
-                style="border:0"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3216.7988454544146!2d59.427985!3d36.364045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzbCsDIxJzUwLjYiTiA1OcKwMjUnNDAuNyJF!5e0!3m2!1sen!2s!4v1620000000000!5m2!1sen!2s"
-                allowfullscreen>
+            <iframe width="100%"
+                    height="300"
+                    frameborder="0"
+                    style="border:0"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3216.7988454544146!2d59.427985!3d36.364045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzbCsDIxJzUwLjYiTiA1OcKwMjUnNDAuNyJF!5e0!3m2!1sen!2s!4v1620000000000!5m2!1sen!2s"
+                    allowfullscreen>
             </iframe>
         </div>
 
         <form id="rsvpForm" class="rsvp-form">
             <h3>آیا افتخار حضور شما را خواهیم داشت؟</h3>
-            
+
             <div class="radio-group">
                 <label>
                     <input type="radio" name="attendance" value="true" required>
@@ -97,11 +100,11 @@
             </div>
 
             <textarea name="message" placeholder="پیامی برای عروس و داماد بنویسید (اختیاری)"></textarea>
-            
+
             <input type="hidden" name="firstName" id="firstName">
             <input type="hidden" name="lastName" id="lastName">
             <input type="hidden" name="date" id="currentDate">
-            
+
             <button type="submit" class="submit-button">ارسال پاسخ</button>
         </form>
 
