@@ -57,9 +57,16 @@ function updateCountdown() {
 // Handle form submission
 function setupForm() {
     const form = document.getElementById('rsvpForm');
+    const submitButton = form.querySelector('.submit-button');
+    const loadingSpinner = submitButton.querySelector('.loading-spinner');
+    const buttonText = submitButton.querySelector('.button-text');
     
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
+        
+        // Show loading state
+        submitButton.disabled = true;
+        loadingSpinner.style.display = 'inline-block';
         
         const currentDate = new Date().toISOString();
         document.getElementById('currentDate').value = currentDate;
@@ -82,6 +89,10 @@ function setupForm() {
         } catch (error) {
             console.error('Error:', error);
             alert('خطا در ارسال فرم. لطفا دوباره تلاش کنید.');
+        } finally {
+            // Hide loading state
+            submitButton.disabled = false;
+            loadingSpinner.style.display = 'none';
         }
     });
 }
