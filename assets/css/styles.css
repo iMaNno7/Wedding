@@ -306,14 +306,15 @@ body {
     letter-spacing: 0.02em;
     display: contents;
 }
-
 .map-buttons {
     display: flex;
     justify-content: center;
-    gap: calc(var(--spacing-unit) / 2);
+    gap: 1rem; /* فاصله افقی بین دکمه‌ها */
     margin: calc(var(--spacing-unit) * 2) 0;
+    flex-wrap: wrap;
 }
 
+/* دکمه‌ها اندازه ثابت */
 .map-button {
     font-family: 'Dana-Medium';
     font-size: 0.8rem;
@@ -324,13 +325,33 @@ body {
     border: 1px solid var(--accent-color);
     text-decoration: none;
     transition: all 0.3s ease;
-    border-radius: 5px;
-    background-color: transparent;
+    background-color: #F0F0F0;
+    white-space: nowrap;
+    width: 140px;      /* عرض ثابت */
+    height: 40px;      /* ارتفاع ثابت */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
 }
 
 .map-button:hover {
     background-color: var(--accent-color);
     color: white;
+}
+
+@media (max-width: 600px) {
+    .map-buttons {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    .map-button {
+        width: 100%;
+        max-width: 300px;
+        height: 40px;
+    }
 }
 
 .image-gallery {
@@ -397,20 +418,19 @@ body {
         grid-template-columns: 1fr;
         gap: 1rem;
     }
-    
-    .gallery-item {
-        aspect-ratio: 1/1;
-    }
 }
 
 .rsvp-form {
-    margin: calc(var(--spacing-unit) * 3) 0;
+    margin: 40px 0;
     text-align: center;
-    max-width: 600px;
+    max-width: 100%;
     margin-left: auto;
     margin-right: auto;
     padding: calc(var(--spacing-unit) * 2);
-    border-top: 1px solid #eee;
+    background-color: var(--color-background);
+    padding: var(--space-4);
+    border-radius: var(--radius-md);
+    font-family: var(--font-primary);
 }
 
 .rsvp-form h3 {
@@ -427,10 +447,11 @@ body {
 }
 
 .radio-group {
-    margin: calc(var(--spacing-unit) * 1.5) 0;
+    margin: calc(var(--spacing-unit) * 2) 0;
     display: flex;
     justify-content: center;
-    gap: calc(var(--spacing-unit) * 2);
+    gap: 3rem;
+    flex-wrap: wrap;
 }
 
 .radio-group label {
@@ -438,38 +459,52 @@ body {
     align-items: center;
     gap: 0.5rem;
     font-family: 'Dana-Medium';
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     color: var(--accent-color);
     cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.radio-group label:hover {
+    color: black;
 }
 
 .radio-group input[type="radio"] {
     appearance: none;
     width: 1.2rem;
     height: 1.2rem;
-    border: 1px solid var(--accent-color);
-    border-radius: 50%;
+    border: 2px solid black;
+    border-radius: 4px;
     margin: 0;
     position: relative;
     cursor: pointer;
+    background-color: transparent;
+    transition: all 0.2s ease;
 }
 
 .radio-group input[type="radio"]:checked::after {
     content: '';
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 0.6rem;
-    height: 0.6rem;
-    background-color: var(--accent-color);
-    border-radius: 50%;
+    top: 2px;
+    left: 4px;
+    width: 4px;
+    height: 8px;
+    border: solid black;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    transition: all 0.2s ease;
 }
+
+.radio-group label:hover input[type="radio"] {
+    transform: scale(1.3); 
+    font-size: 0.98rem;
+}
+
 
 textarea {
     width: 100%;
     padding: 1rem;
-    margin: var(--spacing-unit) 0;
+    margin: 20px 0px;
     border: 1px solid var(--accent-color);
     border-radius: 0;
     min-height: 120px;
@@ -491,17 +526,18 @@ textarea:focus {
     text-transform: uppercase;
     letter-spacing: 0.2em;
     color: var(--text-color);
-    background: transparent;
     border: 1px solid var(--text-color);
     padding: 1rem 2rem;
     cursor: pointer;
     transition: all 0.3s ease;
     margin-top: var(--spacing-unit);
+    border-radius: var(--radius-md);
 }
 
 .submit-button:hover {
-    background-color: var(--text-color);
-    color: white;
+    color: rgb(0, 0, 0);
+    font-size: 0.92rem;
+    letter-spacing: 0.3em;
 }
 
 @media (max-width: 768px) {
