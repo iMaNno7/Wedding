@@ -57,27 +57,44 @@ function updateCountdown() {
 // Handle form submission
 function showToast(message, type = 'success') {
     // Remove existing toast if any
-    const existingToast = document.querySelector('.toast');
-    if (existingToast) {
-        existingToast.remove();
+    const existingOverlay = document.querySelector('.toast-overlay');
+    if (existingOverlay) {
+        existingOverlay.remove();
     }
 
-    // Create new toast
+    // Create overlay
+    const overlay = document.createElement('div');
+    overlay.className = 'toast-overlay';
+
+    // Create toast
     const toast = document.createElement('div');
     toast.className = `toast ${type}`;
-    toast.textContent = message;
+
+    // Add message
+    const messageDiv = document.createElement('div');
+    messageDiv.textContent = message;
+    toast.appendChild(messageDiv);
+
+    // Add close button
+    const closeButton = document.createElement('button');
+    closeButton.className = 'toast-close';
+    closeButton.textContent = 'ممنونیم💖';
+    closeButton.onclick = () => {
+        overlay.classList.remove('show');
+        toast.classList.remove('show');
+        setTimeout(() => overlay.remove(), 300);
+    };
+    toast.appendChild(closeButton);
 
     // Add to document
-    document.body.appendChild(toast);
+    overlay.appendChild(toast);
+    document.body.appendChild(overlay);
 
     // Trigger animation
-    setTimeout(() => toast.classList.add('show'), 10);
-
-    // Auto remove after 3 seconds
-    setTimeout(() => {
-        toast.classList.remove('show');
-        setTimeout(() => toast.remove(), 300);
-    }, 3000);
+    requestAnimationFrame(() => {
+        overlay.classList.add('show');
+        toast.classList.add('show');
+    });
 }
 
 function setupForm() {
@@ -106,14 +123,14 @@ function setupForm() {
             const result = await response.json();
             
             if (result.success) {
-                showToast('پاسخ شما با موفقیت ثبت شد.', 'success');
+                showToast('یادگاریت برامون موندگار شد', 'success');
                 form.reset();
             } else {
-                showToast('خطا در ثبت پاسخ. لطفا دوباره تلاش کنید.', 'error');
+                showToast('یه خطای کوچیک پیش اومد. لطفاً دوباره تلاش کن', 'error');
             }
         } catch (error) {
             console.error('Error:', error);
-            showToast('خطا در ارسال فرم. لطفا دوباره تلاش کنید.', 'error');
+            showToast('یه خطای کوچیک پیش اومد. لطفاً دوباره تلاش کن', 'error');
         } finally {
             // Hide loading state
             submitButton.disabled = false;
